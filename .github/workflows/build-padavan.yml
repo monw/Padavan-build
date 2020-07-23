@@ -8,7 +8,7 @@ on:
     tags:
     - 'v*'
   #  branches: 
-  #    - main
+  #    - master
 #  schedule:
 #    - cron: 0 8 * * 5
   watch:
@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@main
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
