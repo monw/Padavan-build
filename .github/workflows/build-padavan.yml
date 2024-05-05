@@ -32,13 +32,13 @@ jobs:
         pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev gcc-multilib libssl-dev python
     - name: Clone source code
       run: |
-        git clone -b main --depth=1 https://github.com/monw/padavan-4.4.git /opt/rt-n56u
+        git clone -b main --depth=1 https://github.com/monw/rt-n56u.git /opt/rt-n56u
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: QM-B1
+        TNAME: MI-NANO
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
@@ -110,12 +110,6 @@ jobs:
       with:
         name: Padavan-packages
         path: /opt/images
-
-    - name: Upload firmware to WeTransfer
-      run: |
-        curl -fsSL git.io/file-transfer | sh
-        ./transfer wet -s -p 16 --no-progress /opt/images 2>&1 | tee wetransfer.log
-        echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
           
     - name: Generate release tag
       id: tag
