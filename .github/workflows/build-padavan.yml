@@ -42,7 +42,7 @@ jobs:
       run: |
         cd /opt/rt-n56u/trunk
         cd user
-        rm msd_lite
+        rm -rf msd_lite
         svn export https://github.com/vb1980/padavan-4.4/tree/49edf64cd795995bee3e99255b0ef9f2e3532b1f/trunk/user/msd_lite
         cd ..
         if [ ! -f configs/templates/$TNAME.config ] ; then
