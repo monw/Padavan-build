@@ -43,7 +43,7 @@ jobs:
         cd /opt/rt-n56u/trunk
         cd user
         rm -rf msd_lite
-        svn export https://github.com/vb1980/padavan-4.4/branches/main/trunk/user/msd_lite
+        svn export https://github.com/vb1980/padavan-4.4/tree/main/trunk/user/msd_lite
         cd ..
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
