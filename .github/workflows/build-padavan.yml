@@ -41,16 +41,12 @@ jobs:
         TNAME: JCG-N2412M
       run: |
         cd /opt/rt-n56u/trunk
-        #cd user
-        #rm -rf msd_lite
-        #svn co https://github.com/vb1980/padavan-4.4/tree/49edf64cd795995bee3e99255b0ef9f2e3532b1f/trunk/user/msd_lite msd_lite
-        #cd ..
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
         exit 1
         fi
         cp -f configs/templates/$TNAME.config .config
-        sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
+        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         ################################################################################################
         #因不同型号配置功能不一样，所以先把配置项删除，如果你自己要添加其他的，也要写上删除这一条，切记！！！
         ################################################################################################
