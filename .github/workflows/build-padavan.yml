@@ -33,8 +33,8 @@ jobs:
     - name: Clone source code
       run: |
         git clone -b main1 --depth=1 https://github.com/monw/Padavan-3.4-KVR.git /opt/rt-n56u
-        cd /opt/rt-n56u/toolchain-mipsel
-        sh dl_toolchain.sh
+        #cd /opt/rt-n56u/toolchain-mipsel
+        #sh dl_toolchain.sh
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
