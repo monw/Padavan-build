@@ -101,6 +101,7 @@ jobs:
         #sed -i '/自定义项/d' .config
         #echo "自定义项=y" >> .config
         #########################################################################################
+        cd /opt/rt-n56u
         sudo make $TNAME
         sudo mv -f images/*.trx /opt/images/
     - name : Upload packages
